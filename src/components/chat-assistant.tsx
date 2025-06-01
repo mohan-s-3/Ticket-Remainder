@@ -17,7 +17,6 @@ interface Message {
 }
 
 const faqSuggestions = [
-  "What is the Passenger Name Record (PNR) status for my train ticket?",
   "What is the last date to cancel my train ticket and get a refund?",
   "What are the rules for Tatkal ticket booking?",
   "How many days in advance can I book a train ticket in India?",
