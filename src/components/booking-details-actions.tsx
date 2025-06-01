@@ -3,7 +3,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Timer, CalendarPlus, Download } from 'lucide-react'; // Removed Info icon
+import { Timer, CalendarPlus, Download } from 'lucide-react';
 import { format } from 'date-fns';
 import { generateIcsFileContent, generateGoogleCalendarLink, generateOutlookCalendarLink } from '@/lib/calendar-utils';
 
@@ -47,11 +47,10 @@ export default function BookingDetailsActions({ bookingDate, travelDate }: Booki
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
-        <div className="p-4 bg-chart-2/10 border border-chart-2/30 rounded-md">
+        <div className="p-4 bg-chart-2/15 border-2 border-chart-2/40 rounded-lg shadow-md">
           <div className="flex items-start">
-            {/* Info icon removed from here */}
             <div>
-              <p className="text-lg text-foreground/90">
+              <p className="text-xl text-foreground/90">
                 <strong className="font-bold text-chart-2">{format(bookingDate, 'PPP')} at 8:00 AM</strong>
               </p>
             </div>
@@ -59,7 +58,6 @@ export default function BookingDetailsActions({ bookingDate, travelDate }: Booki
         </div>
 
         <div>
-          {/* Title and description removed as per request */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <Button
               onClick={() => window.open(googleLink, '_blank')}
