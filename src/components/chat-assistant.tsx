@@ -130,7 +130,7 @@ export default function ChatAssistant() {
                   className={`max-w-[75%] rounded-lg px-3 py-2 text-sm shadow-sm ${
                     message.type === 'user'
                       ? 'bg-primary text-primary-foreground'
-                      : 'bg-card text-card-foreground'
+                      : 'bg-card text-card-foreground border'
                   }`}
                 >
                   {message.text}
@@ -147,7 +147,7 @@ export default function ChatAssistant() {
                 <Avatar className="h-8 w-8">
                    <AvatarFallback><Bot size={18}/></AvatarFallback>
                 </Avatar>
-                <div className="max-w-[75%] rounded-lg px-3 py-2 text-sm bg-card text-card-foreground shadow-sm">
+                <div className="max-w-[75%] rounded-lg px-3 py-2 text-sm bg-card text-card-foreground shadow-sm border">
                   <span className="animate-pulse">Typing...</span>
                 </div>
               </div>
