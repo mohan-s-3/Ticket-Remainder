@@ -110,3 +110,41 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes ripple-lr {
+  0% {
+    background-position: -150% 0;
+  }
+  100% {
+    background-position: 150% 0;
+  }
+}
+
+.ripple-effect-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-effect-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    hsla(173, 58%, 65%, 0.2) 40%, /* Lighter, transparent version of chart-2 color */
+    hsla(173, 58%, 65%, 0.2) 60%,
+    transparent 100%
+  );
+  background-size: 300% 100%; /* Gradient is 3x wider than the element */
+  animation: ripple-lr 3.5s linear infinite;
+  z-index: 0; /* Ripple is behind the content but above the card's own background */
+}
+
+.ripple-effect-card > * {
+  position: relative; /* Ensure content is on top of the ripple */
+  z-index: 1;
+}

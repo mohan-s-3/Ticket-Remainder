@@ -47,11 +47,11 @@ export default function BookingDetailsActions({ bookingDate, travelDate }: Booki
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
-        <div className="p-4 bg-chart-2/10 border border-chart-2/30 rounded-md"> {/* Reverted style */}
+        <div className="p-4 bg-chart-2/10 border border-chart-2/30 rounded-md ripple-effect-card">
           <div className="flex items-start">
             <div>
-              <p className="text-lg text-chart-2 font-semibold"> {/* Reverted style */}
-                <strong className="font-bold">{format(bookingDate, 'PPP')} at 8:00 AM</strong> {/* Reverted style */}
+              <p className="text-lg text-chart-2 font-semibold">
+                <strong className="font-bold">{format(bookingDate, 'PPP')} at 8:00 AM</strong>
               </p>
             </div>
           </div>
