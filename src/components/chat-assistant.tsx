@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useRef, useEffect } from 'react';
@@ -63,7 +64,7 @@ export default function ChatAssistant() {
         </CardDescription>
       </CardHeader>
       <CardContent className="flex-grow flex flex-col overflow-hidden p-0">
-        <ScrollArea className="flex-grow p-4" ref={scrollAreaRef}>
+        <ScrollArea className="flex-grow p-4 max-h-[500px]" ref={scrollAreaRef}>
           <div className="space-y-4">
             {messages.map((message) => (
               <div
