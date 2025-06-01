@@ -18,7 +18,7 @@ body {
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 160 100% 30%; /* Dark Green #009966 (previously accent) */
+    --primary: 160 100% 30%; /* Dark Green #009966 */
     --primary-foreground: 0 0% 100%; /* White text on primary */
 
     --secondary: 180 12% 92%; /* Lighter grey */
@@ -27,7 +27,7 @@ body {
     --muted: 180 12% 88%; /* Muted grey */
     --muted-foreground: 180 8% 45%; /* Muted text color grey */
 
-    --accent: 145 65% 55%; /* Light Green #3DCC8A */
+    --accent: 148 68% 95%; /* Very Light Green #eafbf2 */
     --accent-foreground: 222.2 84% 4.9%; /* Dark text for contrast */
 
     --destructive: 0 84.2% 60.2%;
@@ -65,7 +65,7 @@ body {
     --popover: 180 5% 8%;
     --popover-foreground: 180 5% 95%;
 
-    --primary: 160 100% 55%; /* Light Vibrant Green #1AFFAD (previously accent) */
+    --primary: 160 100% 55%; /* Light Vibrant Green #1AFFAD */
     --primary-foreground: 160 30% 10%; /* Dark green text on brighter primary */
 
     --secondary: 180 4% 20%; /* Darker grey secondary */
@@ -74,7 +74,7 @@ body {
     --muted: 180 4% 17%; /* Muted dark grey */
     --muted-foreground: 180 5% 60%; /* Muted light grey text */
 
-    --accent: 145 60% 75%; /* Very Light Green #A3EBCD */
+    --accent: 148 68% 95%; /* Very Light Green #eafbf2 */
     --accent-foreground: 222.2 84% 4.9%; /* Dark text for contrast */
 
     --destructive: 0 62.8% 30.6%;
