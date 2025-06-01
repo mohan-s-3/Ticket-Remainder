@@ -7,7 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Bot, User, Send } from 'lucide-react';
+import { Bot, User, Send, RotateCcw } from 'lucide-react';
 import { chatWithBookingAssistant, ChatInput } from '@/ai/flows/chat-with-booking-assistant';
 
 interface Message {
@@ -62,6 +62,12 @@ export default function ChatAssistant() {
     await sendMessage(suggestion);
   };
 
+  const handleNewChat = () => {
+    setMessages([]);
+    setInput('');
+    setIsLoading(false); // Reset loading state if any
+  };
+
   useEffect(() => {
     if (scrollAreaRef.current) {
       const viewport = scrollAreaRef.current.querySelector('div[data-radix-scroll-area-viewport]');
@@ -73,13 +79,18 @@ export default function ChatAssistant() {
 
   return (
     <Card className="shadow-lg h-full flex flex-col">
-      <CardHeader>
-        <CardTitle className="font-headline text-2xl text-primary flex items-center">
-          <Bot className="mr-2 h-6 w-6" /> AI Booking Assistant
-        </CardTitle>
-        <CardDescription>
-          Ask questions about Indian rail travel dates and deadlines.
-        </CardDescription>
+      <CardHeader className="flex flex-row items-center justify-between">
+        <div>
+          <CardTitle className="font-headline text-2xl text-primary flex items-center">
+            <Bot className="mr-2 h-6 w-6" /> AI Booking Assistant
+          </CardTitle>
+          <CardDescription>
+            Ask questions about Indian rail travel dates and deadlines.
+          </CardDescription>
+        </div>
+        <Button variant="ghost" size="icon" onClick={handleNewChat} aria-label="New Chat">
+          <RotateCcw className="h-5 w-5" />
+        </Button>
       </CardHeader>
       <CardContent className="flex-grow flex flex-col overflow-hidden p-0">
         <ScrollArea className="flex-grow p-4 max-h-[500px]" ref={scrollAreaRef}>
