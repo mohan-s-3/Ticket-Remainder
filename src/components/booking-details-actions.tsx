@@ -54,10 +54,9 @@ export default function BookingDetailsActions({ bookingDate, travelDate }: Booki
           <div className="flex items-start">
             <Info className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
             <div>
-              <h3 className="font-semibold text-primary/90 text-lg">Booking date</h3>
-              <p className="text-foreground/80">
-                For travel on <strong className="font-medium">{format(travelDate, 'PPP')}</strong>,
-                bookings will open on <strong className="font-medium">{format(bookingDate, 'PPP')} at 8:00 AM</strong>.
+              <p className="text-lg text-foreground/90">
+                Booking opens on <strong className="font-bold text-primary">{format(bookingDate, 'PPP')} at 8:00 AM</strong>
+                {' '}for your travel on <strong className="font-medium">{format(travelDate, 'PPP')}</strong>.
               </p>
             </div>
           </div>
