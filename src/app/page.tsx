@@ -69,7 +69,7 @@ export default function HomePage() {
       <Popover>
         <PopoverTrigger asChild>
           <Button
-            className="fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-xl md:w-auto md:h-auto md:px-6 md:py-3 flex items-center justify-center bg-primary hover:bg-primary/90 text-primary-foreground text-lg z-40"
+            className="fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-xl md:w-auto md:h-auto md:px-6 md:py-3 flex items-center justify-center bg-primary hover:bg-primary/90 text-primary-foreground text-lg z-40 hidden"
             aria-label="Ask AI"
           >
             <Bot className="h-6 w-6 md:mr-2" />
