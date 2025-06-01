@@ -3,7 +3,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Timer, CalendarPlus, Download, Info } from 'lucide-react'; // Kept Timer, CalendarPlus, Download
+import { Timer, CalendarPlus, Download } from 'lucide-react'; // Removed Info icon
 import { format } from 'date-fns';
 import { generateIcsFileContent, generateGoogleCalendarLink, generateOutlookCalendarLink } from '@/lib/calendar-utils';
 
@@ -49,7 +49,7 @@ export default function BookingDetailsActions({ bookingDate, travelDate }: Booki
       <CardContent className="space-y-6">
         <div className="p-4 bg-chart-2/10 border border-chart-2/30 rounded-md">
           <div className="flex items-start">
-            <Info className="h-5 w-5 text-chart-2 mr-3 mt-0.5 flex-shrink-0" />
+            {/* Info icon removed from here */}
             <div>
               <p className="text-lg text-foreground/90">
                 <strong className="font-bold text-chart-2">{format(bookingDate, 'PPP')} at 8:00 AM</strong>
