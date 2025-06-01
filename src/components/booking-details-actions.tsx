@@ -33,7 +33,7 @@ export default function BookingDetailsActions({ bookingDate, travelDate }: Booki
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    URL.revokeObjectURL(link.href); 
+    URL.revokeObjectURL(link.href);
   };
 
   const googleLink = generateGoogleCalendarLink(eventDetails.title, eventDetails.description, eventDetails.startTime, eventDetails.endTime);
@@ -47,11 +47,11 @@ export default function BookingDetailsActions({ bookingDate, travelDate }: Booki
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
-        <div className="p-4 bg-chart-2/15 border-2 border-chart-2/40 rounded-lg shadow-md">
+        <div className="p-4 bg-chart-2/10 border border-chart-2/30 rounded-md"> {/* Reverted style */}
           <div className="flex items-start">
             <div>
-              <p className="text-xl text-foreground/90">
-                <strong className="font-bold text-chart-2">{format(bookingDate, 'PPP')} at 8:00 AM</strong>
+              <p className="text-lg text-chart-2 font-semibold"> {/* Reverted style */}
+                <strong className="font-bold">{format(bookingDate, 'PPP')} at 8:00 AM</strong> {/* Reverted style */}
               </p>
             </div>
           </div>
