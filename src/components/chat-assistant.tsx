@@ -17,8 +17,8 @@ interface Message {
 }
 
 const faqSuggestions = [
-  "What are the rules for Tatkal ticket booking?",
   "How many days in advance can I book a train ticket in India?",
+  "What are the rules for Tatkal ticket booking?",
   "What is the refund policy if my train is delayed or cancelled?",
 ];
 
@@ -91,7 +91,7 @@ export default function ChatAssistant() {
         </Button>
       </CardHeader>
       <CardContent className="flex-grow flex flex-col overflow-hidden p-0">
-        <ScrollArea className="flex-grow p-3 max-h-[350px]" ref={scrollAreaRef}> {/* Adjusted max-h and padding */}
+        <ScrollArea className="h-0 flex-grow p-3 max-h-[350px]" ref={scrollAreaRef}> {/* Adjusted max-h and padding */}
           {messages.length === 0 && !isLoading && (
             <div className="mb-3 space-y-1.5">
               <p className="text-xs text-muted-foreground mb-1.5 px-1">
