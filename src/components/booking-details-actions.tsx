@@ -3,7 +3,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Timer, CalendarPlus, Download, Info } from 'lucide-react'; // Added Timer, kept Info for the inner box
+import { Timer, CalendarPlus, Download, Info } from 'lucide-react'; // Kept Timer, CalendarPlus, Download
 import { format } from 'date-fns';
 import { generateIcsFileContent, generateGoogleCalendarLink, generateOutlookCalendarLink } from '@/lib/calendar-utils';
 
@@ -47,25 +47,19 @@ export default function BookingDetailsActions({ bookingDate, travelDate }: Booki
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
-        <div className="p-4 bg-primary/10 border border-primary/30 rounded-md">
+        <div className="p-4 bg-chart-2/10 border border-chart-2/30 rounded-md">
           <div className="flex items-start">
-            <Info className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
+            <Info className="h-5 w-5 text-chart-2 mr-3 mt-0.5 flex-shrink-0" />
             <div>
               <p className="text-lg text-foreground/90">
-                Booking opens on <strong className="font-bold text-primary">{format(bookingDate, 'PPP')} at 8:00 AM</strong>
-                {' '}for your travel on <strong className="font-medium">{format(travelDate, 'PPP')}</strong>.
+                <strong className="font-bold text-chart-2">{format(bookingDate, 'PPP')} at 8:00 AM</strong>
               </p>
             </div>
           </div>
         </div>
 
         <div>
-          <h3 className="text-lg font-medium text-primary mb-2 flex items-center">
-            <CalendarPlus className="mr-2 h-5 w-5" /> Add to Calendar
-          </h3>
-          <p className="text-sm text-muted-foreground mb-4">
-            Set a reminder for the booking date in your preferred calendar.
-          </p>
+          {/* Title and description removed as per request */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <Button
               onClick={() => window.open(googleLink, '_blank')}
