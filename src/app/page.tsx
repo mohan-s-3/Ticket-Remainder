@@ -2,17 +2,11 @@
 "use client";
 
 import { useState, useEffect, useCallback } from 'react';
-import type { Metadata } from 'next';
 import DateSelector from '@/components/date-selector';
-import CalendarIntegration from '@/components/calendar-integration';
+import BookingDetailsActions from '@/components/booking-details-actions';
 import BookingTimeline from '@/components/booking-timeline';
 import ChatAssistant from '@/components/chat-assistant';
 import { Train } from 'lucide-react';
-
-// export const metadata: Metadata = { // Metadata should be in layout.tsx or as a static export
-//   title: 'Train Ticket Reminder - Plan Your Journey',
-//   description: 'Never miss the train ticket booking window. Calculate booking dates, set reminders, and get AI assistance for Indian rail travel.',
-// };
 
 export default function HomePage() {
   const [selectedTravelDate, setSelectedTravelDate] = useState<Date | undefined>();
@@ -22,7 +16,7 @@ export default function HomePage() {
   const handleDateSelect = useCallback((travelDate: Date, bookingDate: Date) => {
     setSelectedTravelDate(travelDate);
     setCalculatedBookingDate(bookingDate);
-  }, []); // setSelectedTravelDate and setCalculatedBookingDate are stable
+  }, []);
   
   useEffect(() => {
     if (selectedTravelDate && calculatedBookingDate) {
@@ -56,13 +50,13 @@ export default function HomePage() {
           >
             {selectedTravelDate && calculatedBookingDate && (
               <>
+                <BookingDetailsActions 
+                  travelDate={selectedTravelDate}
+                  bookingDate={calculatedBookingDate}
+                />
                 <BookingTimeline
                   travelDate={selectedTravelDate}
                   bookingOpenDate={calculatedBookingDate}
-                />
-                <CalendarIntegration
-                  bookingDate={calculatedBookingDate}
-                  travelDate={selectedTravelDate}
                 />
               </>
             )}
