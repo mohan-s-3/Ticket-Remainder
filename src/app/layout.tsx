@@ -12,10 +12,10 @@ export const metadata: Metadata = {
     title: 'IRCTC Book My Train – 60 Days',
     description: 'Never miss the train ticket booking window for Indian Railways. Get reminders and AI assistance.',
     type: 'website',
-    // url: 'your-app-url.com', // Replace with actual URL when deployed
+    url: 'https://ticket-remainder.vercel.app/', // Replace with actual URL when deployed
     // images: [ // Add a suitable image URL
     //   {
-    //     url: 'your-app-og-image.png',
+    //     url: '/train-front.png',
     //     width: 1200,
     //     height: 630,
     //     alt: 'Train Ticket Reminder App',
