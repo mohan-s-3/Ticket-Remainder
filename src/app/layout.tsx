@@ -1,14 +1,15 @@
+
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'Train Ticket Reminder',
+  title: 'IRCTC Book My Train – 60 Days',
   description: 'Your smart assistant for Indian Railways ticket booking reminders and travel planning. Calculate booking dates, set calendar reminders, and chat with an AI assistant.',
-  keywords: ['train ticket', 'indian railways', 'booking reminder', 'irctc', 'travel planning', 'ai assistant'],
+  keywords: ['train ticket', 'indian railways', 'booking reminder', 'irctc', 'travel planning', 'ai assistant', '60 days booking'],
   authors: [{ name: 'Train Ticket Reminder App' }],
   openGraph: {
-    title: 'Train Ticket Reminder',
+    title: 'IRCTC Book My Train – 60 Days',
     description: 'Never miss the train ticket booking window for Indian Railways. Get reminders and AI assistance.',
     type: 'website',
     // url: 'your-app-url.com', // Replace with actual URL when deployed
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Train Ticket Reminder',
+    title: 'IRCTC Book My Train – 60 Days',
     description: 'Plan your Indian Railways journey with booking reminders and AI help.',
     // site: '@yourtwitterhandle', // Replace with actual Twitter handle
     // creator: '@yourtwitterhandle', // Replace with actual Twitter handle

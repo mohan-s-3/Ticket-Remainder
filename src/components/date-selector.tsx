@@ -12,7 +12,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 interface DateSelectorProps {
   onDateSelect: (travelDate: Date, bookingDate: Date) => void;
@@ -34,10 +34,6 @@ export default function DateSelector({ onDateSelect }: DateSelectorProps) {
       bookingOpen.setDate(travelDate.getDate() - 60);
       bookingOpen.setHours(8, 0, 0, 0); // Booking opens at 8 AM
       onDateSelect(travelDate, bookingOpen);
-    } else {
-      // If travelDate is cleared, the parent's useEffect will handle hiding details.
-      // We might want to explicitly call onDateSelect with undefined if parent needs it.
-      // For now, this setup means onDateSelect is only called with valid dates.
     }
   }, [travelDate, onDateSelect]);
 
@@ -47,9 +43,6 @@ export default function DateSelector({ onDateSelect }: DateSelectorProps) {
         <CardTitle className="font-headline text-2xl text-primary flex items-center">
           <CalendarIcon className="mr-2 h-6 w-6" /> Select Your Travel Date
         </CardTitle>
-        <CardDescription>
-          Choose your intended date of travel to calculate when ticket bookings open.
-        </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <Popover>

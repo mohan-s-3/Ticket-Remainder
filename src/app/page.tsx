@@ -29,14 +29,14 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background text-foreground p-4 md:p-8 flex flex-col items-center font-body">
       <header className="w-full max-w-4xl mb-8 text-center">
-        <div className="flex items-center justify-center mb-4">
-          <Train className="h-10 w-10 md:h-12 md:w-12 text-primary mr-3" />
-          <h1 className="text-4xl md:text-5xl font-headline font-bold text-primary">
-            Train Ticket Reminder
+        <div className="flex flex-col items-center justify-center md:flex-row md:items-center mb-4">
+          <Train className="h-10 w-10 text-primary mb-2 md:mb-0 md:h-12 md:w-12 md:mr-3" />
+          <h1 className="text-4xl md:text-5xl font-headline font-bold text-primary text-center md:text-left">
+            IRCTC Book My Train – 60 Days
           </h1>
         </div>
         <p className="text-lg text-muted-foreground mt-2">
-          Never miss your train ticket booking window again! Select your travel date to get started.
+          Never miss your train ticket booking again!
         </p>
       </header>
 

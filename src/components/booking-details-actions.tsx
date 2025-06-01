@@ -1,9 +1,9 @@
 
 "use client";
 
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Info, CalendarPlus, Download } from 'lucide-react';
+import { Timer, CalendarPlus, Download, Info } from 'lucide-react'; // Added Timer, kept Info for the inner box
 import { format } from 'date-fns';
 import { generateIcsFileContent, generateGoogleCalendarLink, generateOutlookCalendarLink } from '@/lib/calendar-utils';
 
@@ -43,11 +43,8 @@ export default function BookingDetailsActions({ bookingDate, travelDate }: Booki
     <Card className="shadow-lg">
       <CardHeader>
         <CardTitle className="font-headline text-2xl text-primary flex items-center">
-          <Info className="mr-2 h-6 w-6" /> Booking Details & Reminders
+          <Timer className="mr-2 h-6 w-6" /> Booking opens
         </CardTitle>
-        <CardDescription>
-          Information about when your train ticket booking opens and options to add reminders to your calendar.
-        </CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
         <div className="p-4 bg-primary/10 border border-primary/30 rounded-md">
