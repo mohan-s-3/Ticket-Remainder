@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -26,8 +27,8 @@ body {
     --muted: 180 12% 88%; /* Muted grey */
     --muted-foreground: 180 8% 45%; /* Muted text color grey */
 
-    --accent: 239 100% 70%; /* Blue rgb(71, 75, 255) adjusted to #6B6EFF for contrast */
-    --accent-foreground: 239 30% 15%; /* Dark Blue for contrast */
+    --accent: 160 100% 30%; /* Dark Green from rgb(0,153,102) */
+    --accent-foreground: 0 0% 100%; /* White for contrast */
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
@@ -73,8 +74,8 @@ body {
     --muted: 180 4% 17%; /* Muted dark grey */
     --muted-foreground: 180 5% 60%; /* Muted light grey text */
 
-    --accent: 239 100% 70%; /* Same Blue as light mode #6B6EFF */
-    --accent-foreground: 239 30% 10%; /* Very Dark Blue text for accent */
+    --accent: 160 100% 55%; /* Light vibrant Green for dark mode from rgb(0,153,102) base */
+    --accent-foreground: 160 30% 10%; /* Very Dark Green text for accent */
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
