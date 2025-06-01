@@ -51,7 +51,7 @@ export default function BookingDetailsActions({ bookingDate, travelDate }: Booki
           <div className="flex items-start">
             <div>
               <p className="text-lg text-chart-2 font-semibold">
-                <strong className="font-bold">{format(bookingDate, 'PPP')} at 8:00 AM</strong>
+                <strong className="font-bold">{format(bookingDate, "PPP 'at' 8:00 aaaa ' - ' EEEE")}</strong>
               </p>
             </div>
           </div>
@@ -61,21 +61,21 @@ export default function BookingDetailsActions({ bookingDate, travelDate }: Booki
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <Button
               onClick={() => window.open(googleLink, '_blank')}
-              className="w-full bg-accent text-accent-foreground hover:bg-accent/90 py-6 text-base"
+              className="w-full bg-primary text-primary-foreground hover:bg-primary/90 py-6 text-base"
               aria-label="Add to Google Calendar"
             >
               <CalendarPlus className="mr-2 h-5 w-5" /> Google
             </Button>
             <Button
               onClick={() => window.open(outlookLink, '_blank')}
-              className="w-full bg-accent text-accent-foreground hover:bg-accent/90 py-6 text-base"
+              className="w-full bg-primary text-primary-foreground hover:bg-primary/90 py-6 text-base"
               aria-label="Add to Outlook Calendar"
             >
               <CalendarPlus className="mr-2 h-5 w-5" /> Outlook
             </Button>
             <Button
               onClick={handleDownloadIcs}
-              className="w-full bg-accent text-accent-foreground hover:bg-accent/90 py-6 text-base"
+              className="w-full bg-primary text-primary-foreground hover:bg-primary/90 py-6 text-base"
               aria-label="Download ICS for Apple Calendar"
             >
               <Download className="mr-2 h-5 w-5" /> Apple (.ics)
