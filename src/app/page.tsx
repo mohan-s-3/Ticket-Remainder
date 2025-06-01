@@ -1,6 +1,7 @@
+
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import type { Metadata } from 'next';
 import DateSelector from '@/components/date-selector';
 import CalendarIntegration from '@/components/calendar-integration';
@@ -18,10 +19,10 @@ export default function HomePage() {
   const [calculatedBookingDate, setCalculatedBookingDate] = useState<Date | undefined>();
   const [showDetails, setShowDetails] = useState(false);
 
-  const handleDateSelect = (travelDate: Date, bookingDate: Date) => {
+  const handleDateSelect = useCallback((travelDate: Date, bookingDate: Date) => {
     setSelectedTravelDate(travelDate);
     setCalculatedBookingDate(bookingDate);
-  };
+  }, []); // setSelectedTravelDate and setCalculatedBookingDate are stable
   
   useEffect(() => {
     if (selectedTravelDate && calculatedBookingDate) {
