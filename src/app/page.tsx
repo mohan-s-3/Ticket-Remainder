@@ -6,7 +6,9 @@ import DateSelector from '@/components/date-selector';
 import BookingDetailsActions from '@/components/booking-details-actions';
 import BookingTimeline from '@/components/booking-timeline';
 import ChatAssistant from '@/components/chat-assistant';
-import { Train } from 'lucide-react';
+import { Train, Bot } from 'lucide-react';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { Button } from '@/components/ui/button';
 
 export default function HomePage() {
   const [selectedTravelDate, setSelectedTravelDate] = useState<Date | undefined>();
@@ -40,8 +42,8 @@ export default function HomePage() {
         </p>
       </header>
 
-      <main className="w-full max-w-4xl grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-2 space-y-6">
+      <main className="w-full max-w-4xl">
+        <div className="space-y-6">
           <DateSelector onDateSelect={handleDateSelect} />
           
           <div 
@@ -62,11 +64,26 @@ export default function HomePage() {
             )}
           </div>
         </div>
-
-        <div className="lg:col-span-1">
-          <ChatAssistant />
-        </div>
       </main>
+
+      <Popover>
+        <PopoverTrigger asChild>
+          <Button
+            className="fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-xl md:w-auto md:h-auto md:px-6 md:py-3 flex items-center justify-center bg-primary hover:bg-primary/90 text-primary-foreground text-lg z-40"
+            aria-label="Ask AI"
+          >
+            <Bot className="h-6 w-6 md:mr-2" />
+            <span className="hidden md:inline">Ask AI</span>
+          </Button>
+        </PopoverTrigger>
+        <PopoverContent
+          side="top"
+          align="end"
+          className="w-[350px] md:w-[400px] p-0 mr-1 mb-2 border-border shadow-xl rounded-lg"
+        >
+          <ChatAssistant />
+        </PopoverContent>
+      </Popover>
 
       <footer className="w-full max-w-4xl mt-12 pt-8 border-t text-center text-sm text-muted-foreground">
         <p>&copy; {new Date().getFullYear()} Train Ticket Reminder. Crafted with care.</p>

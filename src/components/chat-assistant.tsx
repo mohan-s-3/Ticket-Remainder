@@ -17,7 +17,6 @@ interface Message {
 }
 
 const faqSuggestions = [
-  "What is the last date to cancel my train ticket and get a refund?",
   "What are the rules for Tatkal ticket booking?",
   "How many days in advance can I book a train ticket in India?",
   "What is the refund policy if my train is delayed or cancelled?",
@@ -57,14 +56,14 @@ export default function ChatAssistant() {
 
   const handleFaqClick = async (suggestion: string) => {
     if (isLoading) return;
-    setInput(''); // Clear text input if user was typing
+    setInput(''); 
     await sendMessage(suggestion);
   };
 
   const handleNewChat = () => {
     setMessages([]);
     setInput('');
-    setIsLoading(false); // Reset loading state if any
+    setIsLoading(false); 
   };
 
   useEffect(() => {
@@ -77,33 +76,33 @@ export default function ChatAssistant() {
   }, [messages]);
 
   return (
-    <Card className="shadow-lg h-full flex flex-col">
+    <Card className="shadow-lg h-full flex flex-col border-0">
       <CardHeader className="flex flex-row items-center justify-between">
         <div>
-          <CardTitle className="font-headline text-2xl text-primary flex items-center">
-            <Bot className="mr-2 h-6 w-6" /> AI Booking Assistant
+          <CardTitle className="font-headline text-xl text-primary flex items-center">
+            <Bot className="mr-2 h-5 w-5" /> AI Booking Assistant
           </CardTitle>
-          <CardDescription>
-            Ask questions about Indian rail travel dates and deadlines.
+          <CardDescription className="text-xs">
+            Ask about Indian rail travel.
           </CardDescription>
         </div>
         <Button variant="ghost" size="icon" onClick={handleNewChat} aria-label="New Chat">
-          <RotateCcw className="h-5 w-5" />
+          <RotateCcw className="h-4 w-4" />
         </Button>
       </CardHeader>
       <CardContent className="flex-grow flex flex-col overflow-hidden p-0">
-        <ScrollArea className="flex-grow p-4 max-h-[500px]" ref={scrollAreaRef}>
+        <ScrollArea className="flex-grow p-3 max-h-[350px]" ref={scrollAreaRef}> {/* Adjusted max-h and padding */}
           {messages.length === 0 && !isLoading && (
-            <div className="mb-4 space-y-2">
-              <p className="text-sm text-muted-foreground mb-2 px-1">
-                Here are some question suggestions I can help you with:
+            <div className="mb-3 space-y-1.5">
+              <p className="text-xs text-muted-foreground mb-1.5 px-1">
+                Suggestions:
               </p>
               {faqSuggestions.map((suggestion, index) => (
                 <Button
                   key={index}
                   variant="outline"
                   size="sm"
-                  className="w-full justify-start text-left h-auto py-2 whitespace-normal text-muted-foreground hover:text-accent-foreground"
+                  className="w-full justify-start text-left h-auto py-1.5 px-2 text-xs whitespace-normal text-muted-foreground hover:text-accent-foreground"
                   onClick={() => handleFaqClick(suggestion)}
                   disabled={isLoading}
                 >
@@ -112,7 +111,7 @@ export default function ChatAssistant() {
               ))}
             </div>
           )}
-          <div className="space-y-4">
+          <div className="space-y-3">
             {messages.map((message) => (
               <div
                 key={message.id}
@@ -121,46 +120,46 @@ export default function ChatAssistant() {
                 }`}
               >
                 {message.type === 'ai' && (
-                  <Avatar className="h-8 w-8">
-                    <AvatarFallback><Bot size={18}/></AvatarFallback>
+                  <Avatar className="h-7 w-7">
+                    <AvatarFallback><Bot size={16}/></AvatarFallback>
                   </Avatar>
                 )}
                 <div
-                  className={`max-w-[75%] rounded-lg px-3 py-2 text-sm shadow-sm ${
+                  className={`max-w-[80%] rounded-lg px-2.5 py-1.5 text-xs shadow-sm ${
                     message.type === 'user'
                       ? 'bg-primary text-primary-foreground'
-                      : 'bg-card text-card-foreground border'
+                      : 'bg-card text-card-foreground border border-border'
                   }`}
                 >
                   {message.text}
                 </div>
                 {message.type === 'user' && (
-                   <Avatar className="h-8 w-8">
-                    <AvatarFallback><User size={18}/></AvatarFallback>
+                   <Avatar className="h-7 w-7">
+                    <AvatarFallback><User size={16}/></AvatarFallback>
                   </Avatar>
                 )}
               </div>
             ))}
             {isLoading && messages.length > 0 && messages[messages.length -1].type === 'user' && (
               <div className="flex items-end gap-2 justify-start">
-                <Avatar className="h-8 w-8">
-                   <AvatarFallback><Bot size={18}/></AvatarFallback>
+                <Avatar className="h-7 w-7">
+                   <AvatarFallback><Bot size={16}/></AvatarFallback>
                 </Avatar>
-                <div className="max-w-[75%] rounded-lg px-3 py-2 text-sm bg-card text-card-foreground shadow-sm border">
+                <div className="max-w-[80%] rounded-lg px-2.5 py-1.5 text-xs bg-card text-card-foreground shadow-sm border border-border">
                   <span className="animate-pulse">Typing...</span>
                 </div>
               </div>
             )}
           </div>
         </ScrollArea>
-        <form onSubmit={handleSubmit} className="border-t p-4 flex items-center gap-2 bg-background">
+        <form onSubmit={handleSubmit} className="border-t border-border p-3 flex items-center gap-2 bg-background">
           <Input
             type="text"
-            placeholder="Type your question..."
+            placeholder="Ask something..."
             value={input}
             onChange={(e) => setInput(e.target.value)}
             disabled={isLoading}
-            className="flex-grow"
+            className="flex-grow h-9 text-xs"
             onKeyDown={(e) => {
               if (e.key === 'Enter' && !e.shiftKey) {
                 e.preventDefault();
@@ -168,8 +167,8 @@ export default function ChatAssistant() {
               }
             }}
           />
-          <Button type="submit" disabled={isLoading || !input.trim()} className="bg-primary hover:bg-primary/90">
-            <Send className="h-4 w-4" />
+          <Button type="submit" disabled={isLoading || !input.trim()} className="bg-primary hover:bg-primary/90 h-9 w-9 p-0">
+            <Send className="h-3.5 w-3.5" />
             <span className="sr-only">Send</span>
           </Button>
         </form>
